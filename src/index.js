@@ -1,5 +1,33 @@
+var ColorPresets = [
+    ["#32450C", "#717400", "#DC8505", "#EC5519", "#BE2805"],
+    ['#010712', '#13171F', '#1C1F26', '#24262D', '#961227'],
+    ['#F78F00', '#C43911', '#75003C', '#37154A', '#0F2459'],
+    ['#420000', '#600000', '#790000', '#931111', '#BF1616'],
+    ['#3D0319', '#720435', '#C1140E', '#FC5008', '#32241B'],
+    ['#C89B41', '#A16B2B', '#77312B', '#1C2331', '#152C52']
+];
+
+function getDotColors(options) {
+    var presetsLen = ColorPresets.length;
+    if (options.colorful) {
+        if (options.usePreset && options.usePreset < presetsLen) {
+            return ColorPresets[options.usePreset];
+        } else {
+            var p = getRandomIndex(presetsLen);
+            return ColorPresets[p];
+        }
+    } else {
+        return [];
+    }
+}
+
 function getRandomColor(colors) {
-    return colors[Math.floor(Math.random() * colors.length)];
+    return colors(getRandomIndex(colors.length));
+}
+
+function getRandomIndex(length) {
+    var i = Math.floor(Math.random() * length);
+    return Math.min(i, length - 1);
 }
 
 /**
@@ -1218,6 +1246,7 @@ var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function() {
         this.clear();
 
         var radius = Math.floor(nWidth / 2);
+        var colors = getDotColors(_htOption);
         for (var row = 0; row < nCount; row++) {
             for (var col = 0; col < nCount; col++) {
                 var bIsDark = oQRCode.isDark(row, col);
@@ -1225,6 +1254,8 @@ var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function() {
                 var nLeft = col * nWidth;
                 var nTop = row * nHeight;
                 if (_htOption.isDotted) {
+                    // radius for position probe should be larger,
+                    // otherwise it won't be easy to recognized as qrcode
                     var actRadius = bIsPositionProbe ? radius * 1.2 : radius;
                     var color = _htOption.dotColors.length ? getRandomColor(_htOption.dotColors) : _htOption.colorDark;
                     _oContext.strokeStyle = bIsDark ? _htOption.colorDark : _htOption.colorLight;
@@ -1383,6 +1414,8 @@ QRCode = function(el, vOption) {
         colorLight: "#ffffff",
         isDotted: false,
         dotColors: [],
+        usePreset: 0,
+        colorful: false,
         correctLevel: QRErrorCorrectLevel.H
     };
 
