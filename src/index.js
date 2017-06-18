@@ -1257,7 +1257,7 @@ var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function() {
                     // radius for position probe should be larger,
                     // otherwise it won't be easy to recognized as qrcode
                     var actRadius = bIsPositionProbe ? radius * 1.2 : radius;
-                    var color = _htOption.dotColors.length ? getRandomColor(_htOption.dotColors) : _htOption.colorDark;
+                    var color = colors.length ? getRandomColor(colors) : _htOption.colorDark;
                     _oContext.strokeStyle = bIsDark ? _htOption.colorDark : _htOption.colorLight;
                     _oContext.fillStyle = bIsDark ? color : _htOption.colorLight;
                     var circle = new Path2D();
