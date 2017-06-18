@@ -1,5 +1,5 @@
 const root = (typeof self === 'object') && self.self === self && self;
-var ColorPresets = [
+const ColorPresets = [
     ["#32450C", "#717400", "#DC8505", "#EC5519", "#BE2805"],
     ['#010712', '#13171F', '#1C1F26', '#24262D', '#961227'],
     ['#F78F00', '#C43911', '#75003C', '#37154A', '#0F2459'],
@@ -27,7 +27,7 @@ function getRandomColor(colors) {
 }
 
 function getRandomIndex(length) {
-    var i = Math.floor(Math.random() * length);
+    let i = Math.floor(Math.random() * length);
     return Math.min(i, length - 1);
 }
 
