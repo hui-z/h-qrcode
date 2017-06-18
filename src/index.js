@@ -1489,6 +1489,5 @@ QRCode.prototype.clear = function() {
  */
 QRCode.CorrectLevel = QRErrorCorrectLevel;
 
-//Jingkai: removed IIFE here, add CommonJS exports
-
-module.exports = QRCode;
+//Jingkai: removed IIFE here
+export default QRCode;
