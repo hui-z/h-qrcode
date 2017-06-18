@@ -21,7 +21,7 @@ function genConfig(opts) {
         moduleName: opts.moduleName,
         plugins: [
           buble(),
-          uglify({})
+          // uglify({})
         ].concat(opts.plugins || []),
     };
 

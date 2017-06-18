@@ -11,7 +11,7 @@ const ColorPresets = [
 function getDotColors(options) {
     var presetsLen = ColorPresets.length;
     if (options.colorful) {
-        if (options.usePreset && options.usePreset < presetsLen) {
+        if (options.usePreset !== undefined && options.usePreset < presetsLen) {
             return ColorPresets[options.usePreset];
         } else {
             var p = getRandomIndex(presetsLen);
@@ -23,7 +23,7 @@ function getDotColors(options) {
 }
 
 function getRandomColor(colors) {
-    return colors(getRandomIndex(colors.length));
+    return colors[getRandomIndex(colors.length)];
 }
 
 function getRandomIndex(length) {

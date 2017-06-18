@@ -7,6 +7,18 @@
   <title>QRCode</title>
 </head>
 <body>
-
+  <div id="qrcode"></div>
+  <script type="text/javascript" src="../dist/h-qrcode.min.js"></script>
+  <script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "https://www.google.com",
+      width: 128,
+      height: 128,
+      correctLevel : QRCode.CorrectLevel.H,
+      isDotted: true,
+      usePreset: 0,
+      colorful: true
+    });
+  </script>
 </body>
 </html>
