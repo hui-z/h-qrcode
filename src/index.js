@@ -1,3 +1,4 @@
+const root = (typeof self === 'object') && self.self === self && self;
 var ColorPresets = [
     ["#32450C", "#717400", "#DC8505", "#EC5519", "#BE2805"],
     ['#010712', '#13171F', '#1C1F26', '#24262D', '#961227'],
@@ -995,23 +996,6 @@ function _isSupportCanvas() {
     return typeof CanvasRenderingContext2D != "undefined";
 }
 
-// android 2.x doesn't support Data-URI spec
-function _getAndroid() {
-    var android = false;
-    var sAgent = navigator.userAgent;
-
-    if (/android/i.test(sAgent)) { // android
-        android = true;
-        var aMat = sAgent.toString().match(/android ([0-9]\.[0-9])/i);
-
-        if (aMat && aMat[1]) {
-            android = parseFloat(aMat[1]);
-        }
-    }
-
-    return android;
-}
-
 var svgDrawer = (function() {
 
     var Drawing = function(el, htOption) {
@@ -1137,27 +1121,6 @@ var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function() {
         this._elCanvas.style.display = "block";
     }
 
-    // Android 2.1 bug workaround
-    // http://code.google.com/p/android/issues/detail?id=5141
-    if (this._android && this._android <= 2.1) {
-        var factor = 1 / window.devicePixelRatio;
-        var drawImage = CanvasRenderingContext2D.prototype.drawImage;
-        CanvasRenderingContext2D.prototype.drawImage = function(image, sx, sy, sw, sh, dx, dy, dw, dh) {
-            if (("nodeName" in image) && /img/i.test(image.nodeName)) {
-                for (var i = arguments.length - 1; i >= 1; i--) {
-                    arguments[i] = arguments[i] * factor;
-                }
-            } else if (typeof dw == "undefined") {
-                arguments[1] *= factor;
-                arguments[2] *= factor;
-                arguments[3] *= factor;
-                arguments[4] *= factor;
-            }
-
-            drawImage.apply(this, arguments);
-        };
-    }
-
     /**
      * Check whether the user's browser supports Data URI or not
      *
@@ -1209,7 +1172,6 @@ var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function() {
      */
     var Drawing = function(el, htOption) {
         this._bIsPainted = false;
-        this._android = _getAndroid();
 
         this._htOption = htOption;
         this._elCanvas = document.createElement("canvas");
@@ -1440,7 +1402,6 @@ QRCode = function(el, vOption) {
         Drawing = svgDrawer;
     }
 
-    this._android = _getAndroid();
     this._el = el;
     this._oQRCode = null;
     this._oDrawing = new Drawing(this._el, this._htOption);
@@ -1467,12 +1428,11 @@ QRCode.prototype.makeCode = function(sText) {
 /**
  * Make the Image from Canvas element
  * - It occurs automatically
- * - Android below 3 doesn't support Data-URI spec.
  *
  * @private
  */
 QRCode.prototype.makeImage = function() {
-    if (typeof this._oDrawing.makeImage == "function" && (!this._android || this._android >= 3)) {
+    if (typeof this._oDrawing.makeImage == "function") {
         this._oDrawing.makeImage();
     }
 };
