@@ -13,6 +13,8 @@ function getDotColors(options) {
     if (options.colorful) {
         if (options.usePreset !== undefined && options.usePreset < presetsLen) {
             return ColorPresets[options.usePreset];
+        } else if (options.dotColors && options.dotColors.length) {
+            return options.dotColors;
         } else {
             var p = getRandomIndex(presetsLen);
             return ColorPresets[p];
@@ -1376,7 +1378,6 @@ QRCode = function(el, vOption) {
         colorLight: "#ffffff",
         isDotted: false,
         dotColors: [],
-        usePreset: 0,
         colorful: false,
         correctLevel: QRErrorCorrectLevel.H
     };

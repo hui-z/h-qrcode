@@ -32,6 +32,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 ```
 You can use `colorDark` and `colorLight` to change the foreground and background color.
 
+
 ## Create qrcode with colorful dots
 
 ![colorful](/images/colorful.png)
@@ -49,6 +50,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 ```
 
 > Note: In order to avoid break orignal features, colorful will only work with dotted qrcode.
+
 
 ## Use with preset colors
 
@@ -77,6 +79,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 ```
 
 > If you did not select any colors for colorful qrcode, it'll random one from presets for you.
+
 
 ## Use with customized colors
 
