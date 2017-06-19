@@ -1,8 +1,10 @@
 # h-qrcode
 
+[![npm version](https://badge.fury.io/js/h-qrcode.svg)](https://badge.fury.io/js/h-qrcode)
+
 This project is forked from [qrcodejs](https://github.com/davidshimjs/qrcodejs), your can find the original README there.
 
-Here we are only include features h-qrcode added.
+Here we are only going to include features which h-qrcode added.
 
 > This project is experimental currently, API would be changed in later release.
 
