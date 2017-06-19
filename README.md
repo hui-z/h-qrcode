@@ -18,11 +18,12 @@ npm install --save h-qrcode
 
 # Usage
 
+
+
 ## Create qrcode with dots
 
 ![dotted](/images/dotted.png)
 
-see [dotted example](/examples/dotted.html)
 
 ``` js
 let qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -32,14 +33,18 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
   isDotted: true,
 });
 ```
+
+see [dotted example](/examples/dotted.html)
+
+
 You can use `colorDark` and `colorLight` to change the foreground and background color.
+
 
 
 ## Create qrcode with colorful dots
 
 ![colorful](/images/colorful.png)
 
-see [colorful example](/examples/colorful.html)
 
 ``` js
 let qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -51,7 +56,11 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 });
 ```
 
+see [colorful example](/examples/colorful.html)
+
+
 > Note: In order to avoid break orignal features, colorful will only work with dotted qrcode.
+
 
 
 ## Use with preset colors
@@ -83,6 +92,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 > If you did not select any colors for colorful qrcode, it'll random one from presets for you.
 
 
+
 ## Use with customized colors
 
 Specify color of the dots by yourself:
@@ -97,6 +107,8 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
   colors: ['#AA39395', '#000000']
 });
 ```
+
+
 
 # License
 
