@@ -1,46 +1,27 @@
-# QRCode.js
-QRCode.js is javascript library for making QRCode. QRCode.js supports Cross-browser with HTML5 Canvas and table tag in DOM.
-QRCode.js has no dependencies.
+# h-qrcode
 
-## Basic Usages
-```
-<div id="qrcode"></div>
-<script type="text/javascript">
-new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
-</script>
+This project is forked from [qrcodejs](https://github.com/davidshimjs/qrcodejs), your can find the original README there.
+Here I'm ganna just talk about features h-qrcode added.
+
+> This project is experimental now, API would be changed in later release.
+
+# Installation
+
+h-qrcode is on npm, you can install from npm, and use it with any bundler.
+
+``` bash
+npm install --save h-qrcode
 ```
 
-or with some options
+# Usage
 
-```
-<div id="qrcode"></div>
-<script type="text/javascript">
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	text: "http://jindo.dev.naver.com/collie",
-	width: 128,
-	height: 128,
-	colorDark : "#000000",
-	colorLight : "#ffffff",
-	correctLevel : QRCode.CorrectLevel.H
+## create qrcode with dot
+
+``` js
+let qrcode = new QRCode(document.getElementById("qrcode"), {
+  text: "https://www.google.com",
+  width: 128,
+  height: 128,
+  isDotted: true,
 });
-</script>
 ```
-
-and you can use some methods
-
-```
-qrcode.clear(); // clear the code.
-qrcode.makeCode("http://naver.com"); // make another code.
-```
-
-## Browser Compatibility
-IE6~10, Chrome, Firefox, Safari, Opera, Mobile Safari, Android, Windows Mobile, ETC.
-
-## License
-MIT License
-
-## Contact
-twitter @davidshimjs
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/davidshimjs/qrcodejs/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

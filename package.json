@@ -4,7 +4,8 @@
   "description": "prettier qrcode generator",
   "main": "src/index.js",
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\"",
