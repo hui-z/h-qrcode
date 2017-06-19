@@ -15,7 +15,9 @@ npm install --save h-qrcode
 
 # Usage
 
-## create qrcode with dot
+## Create qrcode with dot
+
+see [dotted example](/examples/dotted.html)
 
 ``` js
 let qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -25,3 +27,4 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
   isDotted: true,
 });
 ```
+You can change
