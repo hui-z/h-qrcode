@@ -65,16 +65,9 @@ see [colorful example](/examples/colorful.html)
 
 ## Use with preset colors
 
-We have several pre-defined color persets for you, the color scheme are:
+We have several pre-defined color persets for you, the color palette is:
 
-``` js
-["#32450C", "#717400", "#DC8505", "#EC5519", "#BE2805"] // #0
-['#010712', '#13171F', '#1C1F26', '#24262D', '#961227'] // #1
-['#F78F00', '#C43911', '#75003C', '#37154A', '#0F2459'] // #2
-['#420000', '#600000', '#790000', '#931111', '#BF1616'] // #3
-['#3D0319', '#720435', '#C1140E', '#FC5008', '#32241B'] // #4
-['#C89B41', '#A16B2B', '#77312B', '#1C2331', '#152C52'] // #5
-```
+![color-palette](/images/color-palette.png)
 
 Use the preset colors with option `usePerset`:
 
