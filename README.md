@@ -10,7 +10,7 @@ Here we are only going to include features which added by h-qrcode .
 
 # Installation
 
-h-qrcode is on npm, you can install from npm, and use it with any bundler.
+h-qrcode is on npm, you can install it from npm, and use it with any bundler tool.
 
 ``` bash
 npm install --save h-qrcode
@@ -37,7 +37,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 see [dotted example](/examples/dotted.html)
 
 
-You can use `colorDark` and `colorLight` to change the foreground and background color.
+Use `colorDark` or `colorLight` to change the foreground or the background color.
 
 
 
@@ -88,7 +88,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 
 ## Use with customized colors
 
-Specify color of the dots by yourself:
+Specify colors of the dots by yourself:
 
 ``` js
 let qrcode = new QRCode(document.getElementById("qrcode"), {
