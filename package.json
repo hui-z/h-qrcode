@@ -2,13 +2,15 @@
   "name": "h-qrcode",
   "version": "0.5.0",
   "description": "prettier qrcode generator",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "files": [
     "src",
     "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\"",
+    "build": "npm run build:cjs && npm run build:umd",
+    "build:cjs": "rollup -c build/config.js --environment TARGET:cjs",
     "build:umd": "rollup -c build/config.js --environment TARGET:umd",
     "build:dev": "rollup -w -c build/config.js --environment TARGET:umd"
   },

@@ -10,6 +10,12 @@ const builds = {
         format: 'umd',
         env: 'production',
         moduleName: 'QRCode',
+    },
+    cjs: {
+        entry: path.resolve('src/index.js'),
+        dest: path.resolve('dist/index.js'),
+        format: 'cjs',
+        env: 'production'
     }
 };
 
