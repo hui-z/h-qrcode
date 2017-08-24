@@ -1219,14 +1219,21 @@ var Drawing = useSVG ? svgDrawer : !_isSupportCanvas() ? (function() {
                 var nTop = row * nHeight;
                 if (_htOption.isDotted) {
                     // radius for position probe should be larger,
-                    // otherwise it won't be easy to recognized as qrcode
-                    var actRadius = bIsPositionProbe ? radius * 1.2 : radius;
+                    // otherwise it won't be recognized as qrcode
+                    var actRadius = bIsPositionProbe ? radius * 1.25 : radius;
                     var color = colors.length ? getRandomColor(colors) : _htOption.colorDark;
                     _oContext.strokeStyle = bIsDark ? _htOption.colorDark : _htOption.colorLight;
                     _oContext.fillStyle = bIsDark ? color : _htOption.colorLight;
                     var circle = new Path2D();
                     circle.arc(nLeft + actRadius, nTop + actRadius, actRadius, 0, 2 * Math.PI);
                     _oContext.fill(circle);
+                } else if (_htOption.colorful) {
+                    var color = colors.length ? getRandomColor(colors) : _htOption.colorDark;
+                    _oContext.strokeStyle = bIsDark ? _htOption.colorDark : _htOption.colorLight;
+                    _oContext.fillStyle = bIsDark ? color : _htOption.colorLight;
+                    var rect = new Path2D();
+                    rect.rect(nLeft, nTop, nWidth, nHeight);
+                    _oContext.fill(rect);
                 } else {
                     _oContext.strokeStyle = bIsDark ? _htOption.colorDark : _htOption.colorLight;
                     _oContext.lineWidth = 1;
