@@ -1,0 +1,21 @@
+image: node:latest
+
+before_script:
+  - npm install --registry=https://tnt.kezaihui.com
+
+cache:
+  paths:
+    - node_modules/
+
+publish:
+  stage: deploy
+  tags:
+    - FE
+    - HPM
+  only:
+    - tags
+    - triggers
+  script:
+    - npm run build:umd
+    - echo '//tnt.kezaihui.com/:_authToken=${HPM_TOKEN}'>.npmrc
+    - npm publish --registry=https://tnt.kezaihui.com
