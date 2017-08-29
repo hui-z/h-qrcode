@@ -21,6 +21,19 @@ npm install --save h-qrcode
 
 ## qrcode with colors
 
+![colorful](/images/colorful.png)
+
+``` js
+let qrcode = new QRCode(document.getElementById('qrcode'), {
+  text: 'https://www.google.com',
+  witdh: 256,
+  height: 256,
+  colorful: true,
+})
+```
+
+see [colorful example](/examples/colorful.html)
+
 
 ## qrcode with dots
 
@@ -45,7 +58,7 @@ Use `colorDark` or `colorLight` to change the foreground or the background color
 
 ## qrcode with colorful dots
 
-![colorful](/images/colorful-dots.png)
+![colorful-dots](/images/colorful-dots.png)
 
 
 ``` js
@@ -58,10 +71,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 });
 ```
 
-see [colorful example](/examples/colorful.html)
-
-
-> Note: In order to avoid break orignal features, colorful will only work with dotted qrcode.
+see [colorful example](/examples/colorful-dots.html)
 
 
 
