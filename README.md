@@ -19,8 +19,10 @@ npm install --save h-qrcode
 # Usage
 
 
+## qrcode with colors
 
-## Create qrcode with dots
+
+## qrcode with dots
 
 ![dotted](/images/dotted.png)
 
@@ -41,9 +43,9 @@ Use `colorDark` or `colorLight` to change the foreground or the background color
 
 
 
-## Create qrcode with colorful dots
+## qrcode with colorful dots
 
-![colorful](/images/colorful.png)
+![colorful](/images/colorful-dots.png)
 
 
 ``` js
@@ -63,7 +65,7 @@ see [colorful example](/examples/colorful.html)
 
 
 
-## Use with preset colors
+## use with preset colors
 
 We have several pre-defined color persets for you, the color palette is:
 
@@ -86,7 +88,7 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 
 
 
-## Use with customized colors
+## use with customized colors
 
 Specify colors of the dots by yourself:
 
