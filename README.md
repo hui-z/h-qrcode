@@ -41,8 +41,8 @@ see [colorful example](/examples/colorful.html)
 
 
 ``` js
-let qrcode = new QRCode(document.getElementById("qrcode"), {
-  text: "https://www.google.com",
+let qrcode = new QRCode(document.getElementById('qrcode'), {
+  text: 'https://www.google.com',
   width: 256,
   height: 256,
   isDotted: true,
@@ -62,8 +62,8 @@ Use `colorDark` or `colorLight` to change the foreground or the background color
 
 
 ``` js
-let qrcode = new QRCode(document.getElementById("qrcode"), {
-  text: "https://www.google.com",
+let qrcode = new QRCode(document.getElementById('qrcode'), {
+  text: 'https://www.google.com',
   width: 256,
   height: 256,
   isDotted: true,
@@ -84,8 +84,8 @@ We have several pre-defined color persets for you, the color palette is:
 Use the preset colors with option `usePerset`:
 
 ``` js
-let qrcode = new QRCode(document.getElementById("qrcode"), {
-  text: "https://www.google.com",
+let qrcode = new QRCode(document.getElementById('qrcode'), {
+  text: 'https://www.google.com',
   width: 256,
   height: 256,
   isDotted: true,
@@ -103,8 +103,8 @@ let qrcode = new QRCode(document.getElementById("qrcode"), {
 Specify colors of the dots by yourself:
 
 ``` js
-let qrcode = new QRCode(document.getElementById("qrcode"), {
-  text: "https://www.google.com",
+let qrcode = new QRCode(document.getElementById('qrcode'), {
+  text: 'https://www.google.com',
   width: 256,
   height: 256,
   isDotted: true,
