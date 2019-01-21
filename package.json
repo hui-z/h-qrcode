@@ -5,8 +5,10 @@
   "main": "dist/index.js",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
+  "types": "h-qrcode.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "build": "npm run build:cjs && npm run build:umd",
