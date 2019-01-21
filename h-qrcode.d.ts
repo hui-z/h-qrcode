@@ -8,6 +8,17 @@ declare module 'h-qrcode' {
         clear(): void;
 
         makeCode(text: string);
+
+        makeImage();
+    }
+
+    const enum ColorPreset {
+        Zero = 0,
+        One,
+        Two,
+        Three,
+        Four,
+        Five,
     }
 
     interface QRCodeConfig {
@@ -17,6 +28,11 @@ declare module 'h-qrcode' {
         colorDark?: string;
         colorLight?: string;
         correctLevel?: number;
+        typeNumber?: number;
+        isDotted?: boolean,
+        dotColors?: string[],
+        colorful?: boolean,
+        usePreset?: ColorPreset,
     }
 
     interface CorrectLevel {

@@ -109,7 +109,7 @@ let qrcode = new QRCode(document.getElementById('qrcode'), {
   height: 256,
   isDotted: true,
   colorful: true
-  colors: ['#AA39395', '#000000']
+  dotColors: ['#AA39395', '#000000']
 });
 ```
 
